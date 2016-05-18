@@ -14,4 +14,6 @@ before_install:
       - sudo R CMD javareconf
 
 env:
-    - TESTS_TO_SKIP=BigSQLGroovy::Federation,BigR::LinearRegression
+    - TESTS_TO_SKIP=BigSQLGroovy::Federation,BigR::LinearRegression,Ambari::HdfsServiceCheck
+
+# Ambari::HdfsServiceCheck - known issue, see: https://github.com/snowch/biginsight-examples/issues/74
