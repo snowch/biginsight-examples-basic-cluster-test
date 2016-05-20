@@ -4,7 +4,6 @@ dist: trusty
 language: java
 
 before_install:
-      - git clone https://github.com/snowch/biginsight-examples .
       - wget https://github.com/snowch/biginsight-examples/archive/master.zip
       - unzip master.zip
       - mv biginsight-examples-master/* .
