@@ -19,3 +19,9 @@ before_install:
 
 env:
     - TESTS_TO_SKIP=BigSQLGroovy::Federation,BigR::LinearRegression
+
+install:
+    - TERM=dumb ./gradlew assemble
+
+script:
+    - TERM=dumb ./gradlew check
