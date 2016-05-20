@@ -6,6 +6,7 @@ language: java
 before_install:
       - wget https://github.com/snowch/biginsight-examples/archive/master.zip
       - unzip master.zip
+      - rm -f biginsight-examples-master/secrets.tar.enc
       - mv biginsight-examples-master/* .
       - openssl aes-256-cbc -K $encrypted_99124ea5561e_key -iv $encrypted_99124ea5561e_iv -in secrets.tar.enc -out secrets.tar -d
       - tar xvf secrets.tar
