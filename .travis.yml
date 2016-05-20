@@ -4,6 +4,7 @@ dist: trusty
 language: java
 
 before_install:
+      - git clone https://github.com/snowch/biginsight-examples .
       - openssl aes-256-cbc -K $encrypted_99124ea5561e_key -iv $encrypted_99124ea5561e_iv -in secrets.tar.enc -out secrets.tar -d
       - tar xvf secrets.tar
       - sudo sh -c 'echo "deb https://cran.r-project.org/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
@@ -14,6 +15,4 @@ before_install:
       - sudo R CMD javareconf
 
 env:
-    - TESTS_TO_SKIP=BigSQLGroovy::Federation,BigR::LinearRegression,Ambari::HdfsServiceCheck
-
-# Ambari::HdfsServiceCheck - known issue, see: https://github.com/snowch/biginsight-examples/issues/74
+    - TESTS_TO_SKIP=BigSQLGroovy::Federation,BigR::LinearRegression
